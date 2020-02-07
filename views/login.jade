@@ -1,0 +1,49 @@
+html
+    head
+        title=title
+        meta(charset='utf-8')
+        link(rel='stylesheet', href='/stylesheets/loginstyle.css')
+        link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap")
+        script.
+            function showError(message) {
+                var x = document.getElementById('snackbar');
+                x.className = "show";
+                x.innerHTML = message;
+                setTimeout(function() {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+            }
+            function validate() {
+                var username = document.getElementById('uid');
+                var password = document.getElementById('pid');
+
+                if(username.value == "" || password.value == "") {
+                    showError('Greška! Popunite sva polja!');
+                    return false;
+                } else if (/\s/.test(username.value) || /\s/.test(password.value)) {
+                    showError('Greška! Nije dozvoljeno umetnuti razmak u polja!');
+                    return false; 
+                } else {
+                    return true;
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                var errMessage = "#{message}";
+                if(errMessage)
+                    showError(errMessage);
+            }, false);
+            
+    body
+        #snackbar
+        .loginbox
+            .header
+                h1 LOGIN
+                h2 Forma
+            h1 Prijavite se da biste nastavili
+            form(action="/login", onsubmit="return validate()", method="post")
+                p Korisničko ime:
+                input(type="text", name="username", placeholder="Unesite korisničko ime" id="uid")
+                p Lozinka:
+                input(type="password", name="password", placeholder="Unesite lozinku" id="pid")
+                input(type="submit", name="" value="Prijavite se")
+                a(href="#") Zaboravili ste lozinku?   

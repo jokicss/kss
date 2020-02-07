@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.loginbox {
+    width: 320px;
+    height: 420px;
+    background: #2c3e50;
+    color: #ffffff;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    z-index: top;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    width: 250px;
+    height: 100px;
+    background: white;
+    color: #014db9;
+    border-radius: 10%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 125px);
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    padding-bottom: 5px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loginbox h1 {
+    margin: 0;
+    padding: 0 0 40px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.header h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0 0 0px;
+}
+
+.header h2 {
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 10px;
+    color:black;
+}
+
+.loginbox p {
+    margin: 0;
+    padding:0;
+    font-weight: bold;
+}
+
+.loginbox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent !important;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size:16px;
+    padding-left: 5px;
+}
+
+.loginbox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.loginbox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover {
+    color: #18bc9c;
+}
+
+.textbox i {
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+
+#snackbar {
+    visibility: hidden; 
+    min-width: 350px; 
+    margin-left: -175px; 
+    background-color: #e74c3c; 
+    color: #fff;
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}

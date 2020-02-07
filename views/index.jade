@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  -var title = "Dobrodošli na naš sajt"
+  nav(role="navigation", class=["navbar", "navbar-default"])
+    a.navbar-brand(href="#")= `${title} \u25B6 ${data}`
+    button#btnLogOut.navbar-text.btn.btn-danger.pull-right Odjavi se
